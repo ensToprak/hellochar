@@ -37,11 +37,11 @@ if (location.hash.length > 0) {
 export function updateParamsHash() {
     const nonDefaultParams: Partial<Params> = {};
     const keys = Object.keys(PARAMS_DEFAULT) as Array<keyof Params>;
-    for (const key of keys) {
-        if (params[key] !== PARAMS_DEFAULT[key]) {
-            nonDefaultParams[key] = params[key];
-        }
-    }
+    // for (const key of keys) {
+    //     if (params[key] !== PARAMS_DEFAULT[key]) {
+    //         nonDefaultParams[key] = params[key];
+    //     }
+    // }
     if (Object.keys(nonDefaultParams).length > 0) {
         location.hash = encodeURI(JSON.stringify(nonDefaultParams));
     } else {
